@@ -43,10 +43,12 @@ const Icon = styled.img`
 export const Button = styled.button`
   border: none;
   padding: 10px;
+  font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
   background: #da4ea2;
-  width: 100px;
+  min-width: 100px;
+  max-width: 200px;
   color: white;
 `
 const Navbar = () => {

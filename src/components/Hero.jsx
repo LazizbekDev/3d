@@ -68,7 +68,7 @@ const Img = styled.img`
   
   @keyframes animate {
     to {
-      transform: translateY(20px) rotate(10deg);
+      transform: translateY(20px);
     }
   }
 `;
