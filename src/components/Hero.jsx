@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import Navbar from "./Navbar.jsx";
 
 
 const Section = styled.div`
@@ -10,7 +11,7 @@ const Section = styled.div`
 const Hero = () => {
     return (
         <Section>
-            Hero
+            <Navbar />
         </Section>
     );
 };
