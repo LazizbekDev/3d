@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
 import {Button} from "./Navbar.jsx";
+import {OrbitControls} from "@react-three/drei";
+import Cube from "./Cube.jsx";
+import {Canvas} from "@react-three/fiber";
 
 
 const Section = styled.div`
@@ -59,7 +62,13 @@ const Who = () => {
         <Section>
             <Container>
                 <Left>
-                {/*    */}
+                    <Canvas camera={{fov: 23, position: [5,5,5]}}>
+                        <OrbitControls />
+                        <ambientLight intensity={1}/>
+                        <directionalLight position={[4,2,1]}/>
+
+                        <Cube />
+                    </Canvas>
                 </Left>
 
                 <Right>
