@@ -40,7 +40,7 @@ const Icon = styled.img`
   width: 20px;
   cursor: pointer;
 `
-const Button = styled.button`
+export const Button = styled.button`
   border: none;
   padding: 10px;
   border-radius: 5px;
