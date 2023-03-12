@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import Navbar, {Button} from "./Navbar.jsx";
 import {MeshDistortMaterial, OrbitControls, Sphere} from "@react-three/drei";
-import Cube from "./Cube.jsx";
 import {Canvas} from "@react-three/fiber";
 
 
@@ -10,17 +9,27 @@ const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex-direction: column;
-`
+  @media only screen and (max-width: 768px) {
+    height: 200vh;
+  }
+`;
 
 const Container = styled.div`
-  height: 100vh;
-  width: 1200px;
+  height: 100%;
+  scroll-snap-align: center;
+  width: 1300px;
   display: flex;
   justify-content: space-between;
-`
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
 const Left = styled.div`
   flex: 2;
@@ -28,54 +37,70 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-`
-const Right = styled.div`
-  flex: 3;
-  position: relative;
-`
-
-const Title = styled.h1`
-    font-size: 74px;
-`;
-const WhatWeDo = styled.div`
-  margin-left: 45px;
-`;
-const SubTitle = styled.h2`
-  position: relative;
-  color: #da4ea2;
-  
-  &:before {
-    transform: translate(-110%, -50%);
-    top: 50%;
-    position: absolute;
-    content: "";
-    width: 40px;
-    height: 3px;
-    border-radius: 4px;
-    background: #A6A6A6;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
   }
 `;
+
+const Title = styled.h1`
+  font-size: 74px;
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const WhatWeDo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const SubTitle = styled.h2`
+  color: #da4ea2;
+`;
+
 const Desc = styled.p`
   font-size: 24px;
   color: lightgray;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  }
 `;
+
+const Right = styled.div`
+  flex: 3;
+  position: relative;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
+`;
+
 const Img = styled.img`
-  position: absolute;
   width: 800px;
   height: 600px;
   object-fit: contain;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
-  pointer-events: none;
-  
   animation: animate 2s infinite ease alternate;
-  
+  pointer-events: none;
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
   @keyframes animate {
     to {
       transform: translateY(20px);
     }
   }
 `;
+
 
 const Hero = () => {
     return (
@@ -110,7 +135,7 @@ const Hero = () => {
                         </Sphere>
                     </Canvas>
 
-                    <Img src={"../../public/img/moon.png"} />
+                    <Img src={"/img/moon.png"} />
                 </Right>
             </Container>
         </Section>
