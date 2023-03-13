@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   height: 100vh;
-  background-image: url("../public/img/bg.jpeg");
+  background-image: url("/img/bg.jpeg");
   color: white;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
